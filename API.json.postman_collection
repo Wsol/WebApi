@@ -1,0 +1,147 @@
+{
+	"id": "f0d04feb-2f35-372b-1849-a6275e3e25f0",
+	"name": "API",
+	"description": "",
+	"order": [
+		"ddb9c0d1-c59b-0874-5b63-f8dd561ad39e",
+		"6a442611-5e8a-1760-96dd-a5047207dbfe",
+		"d94e53f8-c058-6753-f22b-de82f8e0330e"
+	],
+	"folders": [],
+	"timestamp": 1457471788478,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "6a442611-5e8a-1760-96dd-a5047207dbfe",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: bearer pMh_L_eX__8t1CQ5k7yY0wfGGFEY7QMa1W8HuAUh0ha4VZUailZHx5XcI3zFEr7DKwwNaH1wKHgeUmdISOg8ZqMKzpe7HGow8k-N8hZhITntZlPHnY2VJnt6o6X-Qsmmt8lQOZQdlV0vGs4dBI4qUSVWFhuuVHDE0pitG5oHLSFGn1lMZRs-FIJ9V0Bl_WDwCzztwc55akj3aokzNe3ysrIEDF-B_hj-owK6dPBsm0mWCGaAktafK8lTVOp3t-pAEehqsNPtsrDVW6-ytkrGQm5j10bgzDLZ9-8dN5B9KDhxfd2Ts_33JaKpDYi9eJsj0JExXI1sRCH-NeW--ankZbCMfYDEEOkkFyCMwG1Dk9k\n",
+			"url": "http://localhost:22002/api/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1457972314812,
+			"name": "Get Users",
+			"description": "",
+			"collectionId": "f0d04feb-2f35-372b-1849-a6275e3e25f0"
+		},
+		{
+			"id": "d94e53f8-c058-6753-f22b-de82f8e0330e",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: bearer pMh_L_eX__8t1CQ5k7yY0wfGGFEY7QMa1W8HuAUh0ha4VZUailZHx5XcI3zFEr7DKwwNaH1wKHgeUmdISOg8ZqMKzpe7HGow8k-N8hZhITntZlPHnY2VJnt6o6X-Qsmmt8lQOZQdlV0vGs4dBI4qUSVWFhuuVHDE0pitG5oHLSFGn1lMZRs-FIJ9V0Bl_WDwCzztwc55akj3aokzNe3ysrIEDF-B_hj-owK6dPBsm0mWCGaAktafK8lTVOp3t-pAEehqsNPtsrDVW6-ytkrGQm5j10bgzDLZ9-8dN5B9KDhxfd2Ts_33JaKpDYi9eJsj0JExXI1sRCH-NeW--ankZbCMfYDEEOkkFyCMwG1Dk9k\n",
+			"url": "http://localhost:22002/api/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Username",
+					"value": "Wendy",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Enabled",
+					"value": "true",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "FirstName",
+					"value": "Wendy",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "LastName",
+					"value": "Peña",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Email",
+					"value": "wpeña@test.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "PasswordHash",
+					"value": "pena",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1457978605154,
+			"name": "Create User",
+			"description": "",
+			"collectionId": "f0d04feb-2f35-372b-1849-a6275e3e25f0"
+		},
+		{
+			"id": "ddb9c0d1-c59b-0874-5b63-f8dd561ad39e",
+			"headers": "",
+			"url": "smovilgps1.com:81/token",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "f0d04feb-2f35-372b-1849-a6275e3e25f0",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "app",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "dennis",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "optimusApp",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "MobileAppOptimus",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Get Token",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457471808018,
+			"version": 2,
+			"responses": [],
+			"tests": "var responseJSON;\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests[\"response body has key delay\"] = 'delay' in responseJSON;\n}\ncatch (e) { }\ntests[\"response code is 200\"] = responseCode.code === 200;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
