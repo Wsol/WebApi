@@ -9,6 +9,7 @@ using Api.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json;
 
 namespace Api.Providers
 {
@@ -98,9 +99,11 @@ namespace Api.Providers
 
             var identity = new ClaimsIdentity( context.Options.AuthenticationType );
             identity.AddClaim( new Claim( ClaimTypes.Name, context.UserName ) );
+            List<string> rolesId = new List<string>();
             foreach (var role in roles)
             {
                 identity.AddClaim( new Claim(ClaimTypes.Role, role.RoleId.ToString() ) );
+                rolesId.Add(role.Id.ToString());
             }
             identity.AddClaim( new Claim( "sub", context.UserName ) );
 
@@ -111,6 +114,9 @@ namespace Api.Providers
                     },
                     { 
                         "userName", context.UserName
+                    },
+                    {
+                        "roles",string.Join(",",rolesId)
                     }
                 } );
 
