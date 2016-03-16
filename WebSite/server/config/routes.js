@@ -112,16 +112,18 @@ var router = function(app) {
       view='home';
 
     console.log('seccion: ' + view);
-    res.sendFile(view + '/index.html', options, function (err) {
-      if (err) {
-        console.log(err);
-        res.status(err.status).sendFile( app.locals.root_path + '/views/404/index.html');
-      }
-      else {
-        console.log('Sent:', view);
-      }
+    fs.exists( app.locals.root_path + '/views/' + view + '/index.html', function(exists) {
+        if (exists) {
+          console.log('Sent:', view);
+          res.redirect('/#' + view);
+        }else{
+          console.log('Sent: 404');
+          res.redirect('/#404');
+        }
     });
+    
   });
+
   app.get('/*',function(req, res) {
       console.log('/*');
       res.status(404).sendFile( app.locals.root_path + '/views/404/index.html');
