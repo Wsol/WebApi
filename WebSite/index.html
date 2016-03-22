@@ -3,18 +3,22 @@
 	<head>
 		<link rel="icon" 
       type="image/png" 
-      href="http://example.com/myicon.png">
+      href="assets/favicon.ico">
 		<title>{{title}}</title>
 		<!--Import Google Icon Font-->
       	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	    <link rel="stylesheet" href="assets/css/oneToRuleThemAll.css">
 	</head>
 	<body>
-		<ng-include src="'/views/inc/nav.html'"></ng-include>
-		
-		<ng-view></ng-view>
-		
-		<ng-include src="'/views/inc/footer.html'"></ng-include>
+		<div id="wrapper">
+			<ng-include src="'/views/inc/nav.html'"></ng-include>
+			<div class="container">
+				<ng-view></ng-view>
+			</div>
+			<div id="footer">
+				<ng-include src="'/views/inc/footer.html'"></ng-include>
+			</div>
+		</div>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 		<script src="/node_modules/angular/angular.js"></script>
@@ -25,5 +29,6 @@
     	<script src="assets/js/dev/routes.js"></script>
     	<script src="assets/js/dev/controllers/home.js"></script>
     	<script src="assets/js/dev/controllers/page1.js"></script>
+    	<ng-include src="'/views/inc/init-js.html'"></ng-include>
 	</body>
 </html>
