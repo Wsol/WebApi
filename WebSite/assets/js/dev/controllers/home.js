@@ -5,16 +5,16 @@ app.controller( 'homeCtrl', function( $scope ){
 	$scope.data = {
 		dashboard: [
 			{
-				'url': 'clases',
-				'desc': 'Listado de clases',
-				'title': 'Clases',
-				'img': imagepath + 'clases.jpg'
+				'url': 'usuarios',
+				'desc': 'Listado de usuarios activos y no activos.',
+				'title': 'Usuarios',
+				'img': imagepath + 'perfil.jpg'
 			},
 			{
-				'url': 'perfil?user=1',
-				'desc': 'Perfil de Personas.',
-				'title': 'Perfil',
-				'img': imagepath + 'perfil.jpg'
+				'url': 'test',
+				'desc': 'test',
+				'title': 'Test',
+				'img': imagepath + 'test.jpg'
 			}
 		]
 	}

@@ -6,9 +6,9 @@ app.config(function($routeProvider, $locationProvider) {
             .when('/', {
                 templateUrl : '/views/home',
                 controller  : 'homeCtrl'
-            }).when('/page1', {
-                templateUrl : '/views/page1',
-                controller  : 'page1Ctrl'
+            }).when('/usuarios', {
+                templateUrl : '/views/usuarios',
+                controller  : 'usuariosCtrl'
             }).when('/404', {
                 templateUrl : '/views/404'
             }).otherwise({ redirectTo: '/404' });

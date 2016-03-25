@@ -1,0 +1,25 @@
+<div class="Usuarios">
+	 <table class="highlight responsive-table">
+        <thead>
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Apellido</th>
+              <th data-field="name">Correo</th>
+              <th data-field="name">Carrera</th>
+              <th data-field="name">Rol</th>
+              <th data-field="name">Activo</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="persona in data">
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.correo}}</td>
+            <td>{{persona.carrera}}</td>
+            <td>{{persona.rol}}</td>
+            <td class="" ng-class="(persona.activo == true)?'blue-text':'red-text'">{{persona.activo}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
