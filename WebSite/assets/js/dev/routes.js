@@ -11,9 +11,10 @@ app.config(function($routeProvider, $locationProvider) {
                 controller  : 'usuariosCtrl'
             }).when('/404', {
                 templateUrl : '/views/404'
-            }).when('/crudusuarios', {
+            }).when('/crudusuarios/:UserId?', {
                 templateUrl: '/views/crudusuarios',
                 controller: 'crudusuariosCtrl'
+
             }).when('/roles', {
                 templateUrl: '/views/roles',
                 controller: 'rolesCtrl'

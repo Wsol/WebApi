@@ -96,7 +96,7 @@ var router = function(app) {
     });
   });
 
-  app.get('/:view?', function(req, res, next){
+  app.get('/:view?/:id?', function(req, res, next){
      var options = {
       root: app.locals.root_path + '/views/',
       dotfiles: 'deny',
