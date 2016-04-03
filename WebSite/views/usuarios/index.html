@@ -13,15 +13,23 @@
 
         <tbody>
           <tr ng-repeat="persona in data">
-            <td>{{persona.id}}</td>
+            <!--<td>{{persona.id}}</td>-->
             <td>{{persona.firstName}}</td>
             <td>{{persona.lastName}}</td>
             <td>{{persona.email}}</td>
             <td>{{persona.username}}</td>
             <!--<td>{{persona.rol}}</td>-->
             <td class="" ng-class="(persona.enabled == true)?'blue-text':'red-text'">{{persona.enabled}}</td>
-            <td><a ng-href ="/crudusuarios/{{persona.id}})">Edit</a></td>
-            <td><a class="a-inside delete" href="/api/users/"{{persona.id}}>Delete</a></td>
+            <td>
+                <!--<div class="row">-->
+                    <a ng-href ="/crudusuarios/{{persona.id}}">
+                        <i class="material-icons">mode_edit</i>
+                    </a>
+                    <a href="" ng-click="deleteUser(persona.id)">
+                        <i class="material-icons">delete</i>
+                    </a>
+                <!--</div>-->
+             </td>
           </tr>
         </tbody>
       </table>
