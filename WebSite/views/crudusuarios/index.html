@@ -1,0 +1,55 @@
+<div class="crudusuarios">
+    <h3>Usuarios</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s2">
+                <label> Nombres: </label>
+            </div>
+            <div class="col s6">
+                <input id="firstName" class="input-field"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <label> Apellidos: </label>
+            </div>
+            <div class="col s6">
+                <input  id="lastName" class="input-field"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <label> Correo: </label>
+            </div>
+            <div class="col s6">
+                <input  id="email" class="input-field"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <label> Usuario: </label>
+            </div>
+            <div class="col s6">
+                <input id="username" class="input-field"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <label> Clave: </label>
+            </div>
+            <div class="col s6">
+                <input type="password" id="passwordhash" class="input-field"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <label> Activo: </label>
+            </div>
+            <div class="col s6">
+                <input checked="checked" type="checkbox" id="enabled" style="visibility: visible; border: solid;" value="" />
+            </div>
+        </div>
+        <div class="col s6 offset-s6"><button class="btn" ng-click="save()">Guardar</button></div>
+    </div>
+</div>

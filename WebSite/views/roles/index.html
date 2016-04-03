@@ -1,0 +1,23 @@
+<div class="Roles">
+    <table class="highlight responsive-table">
+        <thead>
+        <tr>
+            <th data-field="id">Id</th>
+            <th data-field="name">Descripcion</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="rol in data">
+            <td>{{rol.id}}</td>
+            <td>{{rol.name}}</td>
+
+            <td><a ng-href ="/crudroles/{{rol.id}})">Edit</a></td>
+            <td><a class="a-inside delete" href="/api/users/"{{rol.id}}>Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="col s6 offset-s6"><a href="/crudroles" class="btn" >Crear</a></div>
+</div>
+
