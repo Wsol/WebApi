@@ -7,6 +7,7 @@ app.controller( 'crudusuariosCtrl', function($scope, $http, $window, $routeParam
 			.then(function(response){
 				$scope.data = response.data;
 				console.log(response.data);
+				console.log($routeParams.UserId);
 			});
 	}
 
@@ -17,32 +18,37 @@ app.controller( 'crudusuariosCtrl', function($scope, $http, $window, $routeParam
 			       email: $("#email").val(),
 			       username: $("#username").val(),
 				   passwordhash: $("#passwordhash").val(),
-			       enabled: true//$("#enabled").val()
+			       enabled: true//($("#enabled").val()=="on"?true:false)
 		};
 
-		$http({
-			method : "POST",
-			url : "http://localhost:"+$scope.puerto+"/api/users",
-			data: data
-		}).then(function mySuccess(response) {
-			console.log(response);
-			$window.location.href ="/usuarios";
-		}, function myError(response) {
-			console.log(response);
-		});
+		if($routeParams.UserId!=0){
+			$http({
+				method : "POST",
+				url : "http://localhost:"+$scope.puerto+"/api/users/"+$routeParams.UserId,
+				data: data
+			}).then(function mySuccess(response) {
+				console.log(response);
+				console.log("Metodo save con parametro no."+$routeParams.UserId);
+				//$window.location.href ="/usuarios";
+			}, function myError(response) {
+				console.log(response);
+			});
 
-	$scope.deleteUser= function (UserId){
-		console.log(UserId);
-		$http({
-			method : "POST",
-			url : "http://localhost:"+$scope.puerto+"/api/users/"+UserId
+		}
+		else{
+			$http({
+				method : "POST",
+				url : "http://localhost:"+$scope.puerto+"/api/users",
+				data: data
+			}).then(function mySuccess(response) {
+				console.log(response);
+				$window.location.href ="/usuarios";
+			}, function myError(response) {
+				console.log(response);
+			});
 
-		}).then(function mySuccess(response) {
-			console.log(response);
-			$window.location.href ="/usuarios";
-		}, function myError(response) {
-			console.log(response);
-		});
-	}
+		}
+
+
 	}
 });

@@ -12,8 +12,16 @@
             <td>{{rol.id}}</td>
             <td>{{rol.name}}</td>
 
-            <td><a ng-href ="/crudroles/{{rol.id}})">Edit</a></td>
-            <td><a class="a-inside delete" href="/api/users/"{{rol.id}}>Delete</a></td>
+            <td>
+                <!--<div class="row">-->
+                <a ng-href ="/crudroles/{{rol.id}}">
+                    <i class="material-icons">mode_edit</i>
+                </a>
+                <a href="" ng-click="deleteRol(rol.id)">
+                    <i class="material-icons">delete</i>
+                </a>
+                <!--</div>-->
+            </td>
         </tr>
         </tbody>
     </table>

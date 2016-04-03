@@ -7,7 +7,8 @@
                 <label> Nombre: </label>
             </div>
             <div class="col s6">
-                <input id="Name" class="input-field"/>
+                <input id="Name" class="input-field" ng-value="data.name"/>
+                <input type="hidden" id="id" class="input-field" ng-value="data.id"/>
             </div>
         </div>
         <div class="col s6 offset-s6"><button class="btn" ng-click="save()">Guardar</button></div>

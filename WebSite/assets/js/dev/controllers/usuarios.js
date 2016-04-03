@@ -1,17 +1,24 @@
 "use strict";
 
 app.controller( 'usuariosCtrl', function( $scope, $http, $location){
-	 $http.get('http://localhost:22002/api/users')
+	 $http.get('http://localhost:'+$scope.puerto+'/api/users')
 	 	.then(function(response){
 	 		$scope.data = response.data;
 	 	});
 
-	  $scope.UserId=0;
+	$scope.deleteUser= function (UserId){
+		console.log(UserId);
+		$http({
+			method : "POST",
+			url : "http://localhost:"+$scope.puerto+"/api/users/"+UserId
 
-	  $scope.navigate= function (UserId){
-		  $scope.UserId=UserId;
-		  $location.path("/crudusuarios");
-	  }
+		}).then(function mySuccess(response) {
+			console.log(response);
+			$window.location.href ="/usuarios";
+		}, function myError(response) {
+			console.log(response);
+		});
+	}
 	//$scope.data=[{
 	//		'nombre':'Carlos',
 	//		'apellido':'Zelaya',

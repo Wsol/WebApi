@@ -18,7 +18,7 @@ app.config(function($routeProvider, $locationProvider) {
             }).when('/roles', {
                 templateUrl: '/views/roles',
                 controller: 'rolesCtrl'
-            }).when('/crudroles', {
+            }).when('/crudroles/:roleid?', {
                 templateUrl: '/views/crudroles',
                 controller: 'crudrolesCtrl'
             }).otherwise({ redirectTo: '/404' });
