@@ -131,5 +131,13 @@ namespace Api.Controllers
         {
             return db.Users.Count(e => e.id == id) > 0;
         }
+
+        //[ResponseType(typeof(User))]
+        //public async Task<IHttpActionResult> RandomTest(Object msj)
+        //{
+        //    //var x ="Oshito come miel";
+        //    return CreatedAtRoute("DefaultApi", new { id = 1 }, msj);
+        //}
+
     }
 }
