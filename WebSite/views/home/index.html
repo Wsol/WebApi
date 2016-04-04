@@ -4,13 +4,12 @@
 		<div class="card small col s6" ng-repeat="link in data.dashboard">
 			<a ng-href="{{link.url}}">
 				<div class="card-image waves-effect waves-block waves-light">
-				<object data="{{link.img}}" type="image/png">
-					<img class="activator" src="assets/img/fallback.jpg">
-				</object>
+					<img class="activator responsive-img" ng-src="{{link.img}}">
 				</div>
 			</a>
 			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4">{{link.desc}}</span>
+				<span class="card-title activator grey-text text-darken-4">{{link.title}}</span>
+				<p>{{link.desc}}</p>
 				<p><a ng-href="{{link.url}}"><i class="material-icons right">call_made</i></a></p>
 			</div>
 		</div>
