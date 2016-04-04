@@ -6,7 +6,7 @@
               <th data-field="name">Apellido</th>
               <th data-field="name">Correo</th>
               <th data-field="name">Usuario</th>
-              <!--<th data-field="name">Rol</th>-->
+              <th data-field="name">Rol</th>
               <th data-field="name">Activo</th>
           </tr>
         </thead>
@@ -18,7 +18,7 @@
             <td>{{persona.lastName}}</td>
             <td>{{persona.email}}</td>
             <td>{{persona.username}}</td>
-            <!--<td>{{persona.rol}}</td>-->
+            <td>{{persona.userRoles[0].roleId}}</td>
             <td class="" ng-class="(persona.enabled == true)?'blue-text':'red-text'">{{persona.enabled}}</td>
             <td>
                 <!--<div class="row">-->

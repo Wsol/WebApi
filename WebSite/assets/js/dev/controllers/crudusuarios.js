@@ -7,35 +7,52 @@ app.controller( 'crudusuariosCtrl', function($scope, $http, $window, $routeParam
 			.then(function(response){
 				$scope.data = response.data;
 				console.log(response.data);
-				console.log($routeParams.UserId);
 			});
 	}
 
+	$http.get('http://localhost:'+$scope.puerto+'/api/roles')
+		.then(function(response){
+			$scope.dataRoles = response.data;
+			console.log($scope.dataRoles);
+		});
 
 	$scope.save=function (){
-		var data={ firstName: $("#firstName").val(),
-			       lastName: $("#lastName").val(),
-			       email: $("#email").val(),
-			       username: $("#username").val(),
-				   passwordhash: $("#passwordhash").val(),
-			       enabled: true//($("#enabled").val()=="on"?true:false)
-		};
 
-		if($routeParams.UserId!=0){
+		if($routeParams.UserId){
+
+			var data={ Id:$("#id").val(),
+				FirstName: $("#firstName").val(),
+				LastName: $("#lastName").val(),
+				Email: $("#email").val(),
+				Username: $("#username").val(),
+				Passwordhash: $("#passwordhash").val(),
+				Enabled: $scope.data.enable,//($("#enabled").val()=="on"?true:false),
+				UserRoles:[{Id:0, UserId:$("#id").val(), RoleId: $('#rolSelect').selected}]
+			};
+
+			console.log($("#enabled").val());
 			$http({
-				method : "POST",
+				method : "PUT",
 				url : "http://localhost:"+$scope.puerto+"/api/users/"+$routeParams.UserId,
 				data: data
 			}).then(function mySuccess(response) {
 				console.log(response);
-				console.log("Metodo save con parametro no."+$routeParams.UserId);
-				//$window.location.href ="/usuarios";
+				$window.location.href ="/usuarios";
 			}, function myError(response) {
 				console.log(response);
 			});
 
 		}
 		else{
+
+			var data={ 	FirstName: $("#firstName").val(),
+						LastName: $("#lastName").val(),
+						Email: $("#email").val(),
+						Username: $("#username").val(),
+						PasswordHash: $("#passwordhash").val(),
+						Enabled: true//($("#enabled").val()=="on"?true:false)
+			};
+
 			$http({
 				method : "POST",
 				url : "http://localhost:"+$scope.puerto+"/api/users",

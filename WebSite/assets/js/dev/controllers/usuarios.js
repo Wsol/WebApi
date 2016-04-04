@@ -1,15 +1,16 @@
 "use strict";
 
-app.controller( 'usuariosCtrl', function( $scope, $http, $location){
+app.controller( 'usuariosCtrl', function( $scope, $http, $window){
 	 $http.get('http://localhost:'+$scope.puerto+'/api/users')
 	 	.then(function(response){
 	 		$scope.data = response.data;
+			console.log(response.data);
 	 	});
 
 	$scope.deleteUser= function (UserId){
 		console.log(UserId);
 		$http({
-			method : "POST",
+			method : "DELETE",
 			url : "http://localhost:"+$scope.puerto+"/api/users/"+UserId
 
 		}).then(function mySuccess(response) {

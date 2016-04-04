@@ -44,11 +44,25 @@
         </div>
         <div class="row">
             <div class="col s2">
+                <label for="rolSelect"> Rol: </label>
+            </div>
+            <div class="col s6">
+                <select name="rolSelect" id="rolSelect" style="display: inline" ng-init="selected=data.userRoles[0].roleId">
+                    <option ng-repeat="option in dataRoles" ng-value="option.id">{{option.name}}</option>
+                </select>
+                <!--<label for="rolSelect"> Rol: </label>-->
+            </div>
+        </div>
+        <!--<div class="input-field col s12"> <select> <option value="" disabled selected>Choose your option</option> <option value="1">Option 1</option> <option value="2">Option 2</option> <option value="3">Option 3</option> </select> <label>Materialize Select</label> </div>-->
+
+        <div class="row">
+            <div class="col s2">
                 <label> Activo: </label>
             </div>
             <div class="col s6">
-                <input type="checkbox" id="enabled" ng-value="data.enabled"  />
+                <input type="checkbox" id="enabled" ng-model="data.enabled" ng-change="stateChanged(data.enabled)" />
                 <label for="enabled">  </label>
+                <input type="hidden" id="id" class="input-field" ng-value="data.id"/>
             </div>
         </div>
         <div class="col s6 offset-s6"><button class="btn" ng-click="save()">Guardar</button></div>
