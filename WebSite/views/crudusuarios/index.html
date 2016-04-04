@@ -60,7 +60,8 @@
                 <label> Activo: </label>
             </div>
             <div class="col s6">
-                <input type="checkbox" id="enabled" ng-model="data.enabled" ng-change="stateChanged(data.enabled)" />
+                <input type="checkbox" id="enabled" ng-model="data.enabled" ng-change="stateChanged(data.enabled)"
+                       ng-true-value="true" ng-false-value="false" />
                 <label for="enabled">  </label>
                 <input type="hidden" id="id" class="input-field" ng-value="data.id"/>
             </div>

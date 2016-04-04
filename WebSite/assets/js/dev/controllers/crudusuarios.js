@@ -2,7 +2,7 @@
 
 app.controller( 'crudusuariosCtrl', function($scope, $http, $window, $routeParams ){
 
-	if($routeParams.UserId!=0){
+	if($routeParams.UserId){
 		$http.get('http://localhost:'+$scope.puerto+'/api/users/'+$routeParams.UserId)
 			.then(function(response){
 				$scope.data = response.data;
@@ -25,8 +25,8 @@ app.controller( 'crudusuariosCtrl', function($scope, $http, $window, $routeParam
 				LastName: $("#lastName").val(),
 				Email: $("#email").val(),
 				Username: $("#username").val(),
-				Passwordhash: $("#passwordhash").val(),
-				Enabled: $scope.data.enable,//($("#enabled").val()=="on"?true:false),
+				PasswordHash: $("#passwordhash").val(),
+				Enabled: ($("#enabled").val()=="on"?true:false),
 				UserRoles:[{Id:0, UserId:$("#id").val(), RoleId: $('#rolSelect').selected}]
 			};
 

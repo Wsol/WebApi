@@ -2,7 +2,7 @@
 
 app.controller( 'crudrolesCtrl', function($scope, $http, $window,$routeParams ){
 
-    if($routeParams.roleid!=0){
+    if($routeParams.roleid){
         $http.get('http://localhost:'+$scope.puerto+'/api/roles/'+$routeParams.roleid)
             .then(function(response){
                 $scope.data = response.data;
